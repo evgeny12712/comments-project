@@ -1,0 +1,24 @@
+.user-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 50px;
+}
+
+.user-select .user-select-label {
+  font-family: Arial;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.user-select .user-select-label .user-select-select {
+  outline: none;
+  padding: 5px 10px;
+}
+/*# sourceMappingURL=user-selector.component.css.map */
