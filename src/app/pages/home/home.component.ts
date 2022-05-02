@@ -118,6 +118,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         .getComments()
         .subscribe((comments) => {
           console.log('loading comments....');
+          console.log('com', comments);
           this.comments = comments as Comment[];
           this.comments = this.comments.sort((a, b) => {
             let firstDate: any = new Date(a.createdAt);
