@@ -1,0 +1,11 @@
+<section class="comments-list">
+  <comment-preview
+    *ngFor="let comment of comments"
+    [comment]="comment"
+    [comments]="comments"
+    [loggedInUser]="loggedInUser"
+    (onRemove)="onRemove.emit($event)"
+    (onSaveComment)="onSave.emit($event)"
+    (addComment)="onAddComment.emit($event)"
+  ></comment-preview>
+</section>

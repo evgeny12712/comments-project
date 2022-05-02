@@ -1,0 +1,14 @@
+<section class="user-select">
+  <label class="user-select-label">
+    User :
+    <select
+      class="user-select-select"
+      [(ngModel)]="loggedInUserId"
+      (change)="logUser($event)"
+    >
+      <option *ngFor="let user of users" value="{{ user.id }}">
+        {{ user.displayName }}
+      </option>
+    </select>
+  </label>
+</section>

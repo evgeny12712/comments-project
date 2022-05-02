@@ -1,0 +1,15 @@
+.user-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  & .user-select-label {
+    font-family: Arial;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    & .user-select-select {
+      outline: none;
+      padding: 5px 10px;
+    }
+  }
+}

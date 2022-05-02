@@ -1,0 +1,26 @@
+<section class="main-container">
+  <user-selector
+    (loginUser)="onLoginUser($event)"
+    [users]="users"
+    [user]="loggedInUser"
+  ></user-selector>
+  <comments
+    (onRemove)="onRemoveComment($event)"
+    [comments]="comments"
+    [loggedInUser]="loggedInUser"
+    (onSave)="onSaveComment($event)"
+    (onAddComment)="onAddToComment($event)"
+  ></comments>
+  <div #addComponentScrollto>
+    <add-comment
+      #addComponentScrollto
+      (onSaveComment)="onSaveComment($event)"
+      (blured)="addCommentBlured()"
+      [emptyComment]="emptyComment"
+      [loggedInUser]="loggedInUser"
+      [isFocusAddInput]="isFocusAddInput"
+      [commentDisplayName]="commentDisplayName"
+    ></add-comment>
+  </div>
+  <button (click)="goUp()" class="up-btn">Go up</button>
+</section>

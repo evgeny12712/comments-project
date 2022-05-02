@@ -1,0 +1,17 @@
+<section class="add-comment-container">
+  <div class="comment-to" *ngIf="commentDisplayName">
+    Commenting to
+    <span class="comment-display-name">{{ commentDisplayName }}</span>
+  </div>
+  <section class="add-comment">
+    <img [src]="imagePath" alt="" />
+    <textarea
+      #addTextarea
+      (blur)="saveComment()"
+      [(ngModel)]="emptyComment.txt"
+      class="text-area-add"
+      placeholder="Please add your comment here"
+    ></textarea>
+    <button class="submit-button">Submit</button>
+  </section>
+</section>

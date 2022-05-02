@@ -1,0 +1,42 @@
+<section class="comment">
+  <section class="comment-preview">
+    <img [src]="imagePath" alt="" />
+    <div class="comment-details">
+      <span>{{ user?.displayName }}</span>
+      <span>{{ comment.createdAt | dateDesc }}</span>
+    </div>
+    <span class="comment-txt" *ngIf="!isEdit; else edit">{{
+      comment.txt
+    }}</span>
+    <ng-template #edit>
+      <textarea
+        class="comment-edit"
+        [(ngModel)]="commentCopy.txt"
+        (blur)="saveComment()"
+      ></textarea>
+    </ng-template>
+    <button
+      *ngIf="loggedInUser?.id === comment.ownerId"
+      (click)="onEditComment()"
+      class="comment-button"
+    >
+      edit comment
+    </button>
+    <button
+      *ngIf="loggedInUser?.id === comment.ownerId"
+      (click)="onRemoveComment()"
+      class="comment-button"
+    >
+      delete comment
+    </button>
+    <button (click)="onAddComment()" class="comment-button">comment</button>
+  </section>
+  <comments
+    (onSaveComment)="saveComment()"
+    (onRemove)="onRemove.emit($event)"
+    (onSave)="onSaveComment.emit($event)"
+    (onAddComment)="addComment.emit($event)"
+    [comments]="comment.children"
+    [loggedInUser]="loggedInUser"
+  ></comments>
+</section>
