@@ -55,6 +55,5 @@ export class CommentPreviewComponent implements OnInit {
     this.user = this.commentService.getUserById(this.comment.ownerId);
     this.commentCopy = JSON.parse(JSON.stringify(this.comment));
     this.imagePath = `/assets/users-imgs/${this.comment.ownerId}.jpg`;
-    console.log(this.loggedInUser);
   }
 }
